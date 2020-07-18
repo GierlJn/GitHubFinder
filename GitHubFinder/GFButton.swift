@@ -1,21 +1,29 @@
-//
-//  GFButton.swift
-//  GitHubFinder
-//
-//  Created by Julian Gierl on 18.07.20.
-//  Copyright © 2020 Julian Gierl. All rights reserved.
-//
+
 
 import UIKit
 
 class GFButton: UIButton {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    init(title: String, backgroundColor: UIColor){
+        super.init(frame: .zero)
+        self.setTitle(title, for: .normal)
+        self.backgroundColor = backgroundColor
+        configure()
+    }
+    
+    private func configure(){
+        translatesAutoresizingMaskIntoConstraints = false
+        layer.cornerRadius = 10
+        titleLabel?.textColor = .white
+        titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+    }
 }
