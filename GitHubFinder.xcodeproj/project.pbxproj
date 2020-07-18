@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B91F3FDD24C0804200F6655B /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F3FDC24C0804200F6655B /* SearchVC.swift */; };
+		B91F3FDF24C0805200F6655B /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F3FDE24C0805200F6655B /* FavouritesVC.swift */; };
+		B91F400524C083E700F6655B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91F400424C083E700F6655B /* LaunchScreen.storyboard */; };
+		B9380B0224C2F8EB0010D26F /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9380B0124C2F8EB0010D26F /* GFButton.swift */; };
 		B9D2997924C06CDD00F30B67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D2997824C06CDD00F30B67 /* AppDelegate.swift */; };
 		B9D2997B24C06CDD00F30B67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D2997A24C06CDD00F30B67 /* SceneDelegate.swift */; };
 		B9D2997D24C06CDD00F30B67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D2997C24C06CDD00F30B67 /* ViewController.swift */; };
-		B9D2998024C06CDD00F30B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D2997E24C06CDD00F30B67 /* Main.storyboard */; };
 		B9D2998224C06CDF00F30B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D2998124C06CDF00F30B67 /* Assets.xcassets */; };
-		B9D2998524C06CDF00F30B67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D2998324C06CDF00F30B67 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B91F3FDC24C0804200F6655B /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		B91F3FDE24C0805200F6655B /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
+		B91F400424C083E700F6655B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B9380B0124C2F8EB0010D26F /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		B9D2997524C06CDD00F30B67 /* GitHubFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D2997824C06CDD00F30B67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D2997A24C06CDD00F30B67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B9D2997C24C06CDD00F30B67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B9D2997F24C06CDD00F30B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9D2998124C06CDF00F30B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B9D2998424C06CDF00F30B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9D2998624C06CDF00F30B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,13 +60,15 @@
 		B9D2997724C06CDD00F30B67 /* GitHubFinder */ = {
 			isa = PBXGroup;
 			children = (
+				B91F400424C083E700F6655B /* LaunchScreen.storyboard */,
 				B9D2997824C06CDD00F30B67 /* AppDelegate.swift */,
 				B9D2997A24C06CDD00F30B67 /* SceneDelegate.swift */,
 				B9D2997C24C06CDD00F30B67 /* ViewController.swift */,
-				B9D2997E24C06CDD00F30B67 /* Main.storyboard */,
 				B9D2998124C06CDF00F30B67 /* Assets.xcassets */,
-				B9D2998324C06CDF00F30B67 /* LaunchScreen.storyboard */,
 				B9D2998624C06CDF00F30B67 /* Info.plist */,
+				B91F3FDC24C0804200F6655B /* SearchVC.swift */,
+				B91F3FDE24C0805200F6655B /* FavouritesVC.swift */,
+				B9380B0124C2F8EB0010D26F /* GFButton.swift */,
 			);
 			path = GitHubFinder;
 			sourceTree = "<group>";
@@ -125,9 +131,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9D2998524C06CDF00F30B67 /* LaunchScreen.storyboard in Resources */,
 				B9D2998224C06CDF00F30B67 /* Assets.xcassets in Resources */,
-				B9D2998024C06CDD00F30B67 /* Main.storyboard in Resources */,
+				B91F400524C083E700F6655B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B91F3FDD24C0804200F6655B /* SearchVC.swift in Sources */,
+				B91F3FDF24C0805200F6655B /* FavouritesVC.swift in Sources */,
+				B9380B0224C2F8EB0010D26F /* GFButton.swift in Sources */,
 				B9D2997D24C06CDD00F30B67 /* ViewController.swift in Sources */,
 				B9D2997924C06CDD00F30B67 /* AppDelegate.swift in Sources */,
 				B9D2997B24C06CDD00F30B67 /* SceneDelegate.swift in Sources */,
@@ -145,25 +153,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		B9D2997E24C06CDD00F30B67 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B9D2997F24C06CDD00F30B67 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B9D2998324C06CDF00F30B67 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B9D2998424C06CDF00F30B67 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B9D2998724C06CDF00F30B67 /* Debug */ = {
