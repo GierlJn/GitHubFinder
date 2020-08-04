@@ -30,7 +30,6 @@ class SearchVC: UIViewController {
     }
     
     @objc func pushFollowerListVC(){
-        
         guard isUserNameEntered else {
             presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter a username", buttonTitle: "Ok")
             return
@@ -40,7 +39,6 @@ class SearchVC: UIViewController {
         followerListVC.username = userInputTextfield.text
         followerListVC.title = userInputTextfield.text
         navigationController?.pushViewController(followerListVC, animated: true)
-        
     }
     
     func configureImageView(){
