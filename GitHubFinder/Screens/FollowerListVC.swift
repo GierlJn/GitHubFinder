@@ -9,6 +9,7 @@ class FollowerListVC: UIViewController {
     
     var username: String!
     var followers = [Follower]()
+    var page = 1
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -17,8 +18,8 @@ class FollowerListVC: UIViewController {
         super.viewDidLoad()
         configureViewController()
         configureCollectionView()
+        getFollowers(username: username, page: page)
         configureDataSource()
-        getFollowers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,8 +39,8 @@ class FollowerListVC: UIViewController {
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
     
-    private func getFollowers(){
-        NetworkManager.shared.getFollowers(for: username, page: 1) { [weak self] (result) in
+    private func getFollowers(username: String, page: Int){
+        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] (result) in
             guard let self = self else{ return }
             
             switch(result){
@@ -67,4 +68,16 @@ class FollowerListVC: UIViewController {
         dataSource.apply(snapshot)
     }
 
+}
+
+
+extension FollowerListVC: UICollectionViewDelegate{
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.frame.size.height {
+            page += 1
+            getFollowers(username: username, page: page)
+        }
+    }
+    
 }
