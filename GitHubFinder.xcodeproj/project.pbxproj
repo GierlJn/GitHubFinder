@@ -67,6 +67,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B943E8DE24E04BEE00F049F0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B925CB7324D2B94500CC0C1B /* GFAlertVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B943E8DF24E04BFD00F049F0 /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				B9A8069324D807420041BEB3 /* GFAvatarImageView.swift */,
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		B943E8E024E04C0700F049F0 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				B9380B0124C2F8EB0010D26F /* GFButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		B943E8E124E04C0D00F049F0 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				B9380B0324C2FBE70010D26F /* GFTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		B943E8E224E04C1900F049F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B91DB81624DE898800F0DB72 /* GFEmptyStateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B943E8E324E04C7D00F049F0 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				B925CB6D24D2B65600CC0C1B /* GFTitleLabel.swift */,
+				B925CB6F24D2B76B00CC0C1B /* CGBodyLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
 		B97EEB6A24D3F3C400634F88 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,19 +126,18 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		B97EEB6B24D3F3DA00634F88 /* Views */ = {
+		B97EEB6B24D3F3DA00634F88 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				B943E8E324E04C7D00F049F0 /* Labels */,
+				B943E8E224E04C1900F049F0 /* Views */,
+				B943E8E124E04C0D00F049F0 /* TextFields */,
+				B943E8E024E04C0700F049F0 /* Buttons */,
+				B943E8DF24E04BFD00F049F0 /* ImageViews */,
+				B943E8DE24E04BEE00F049F0 /* ViewControllers */,
 				B9A8069524D807CE0041BEB3 /* Cells */,
-				B9380B0324C2FBE70010D26F /* GFTextField.swift */,
-				B925CB6D24D2B65600CC0C1B /* GFTitleLabel.swift */,
-				B925CB6F24D2B76B00CC0C1B /* CGBodyLabel.swift */,
-				B9380B0124C2F8EB0010D26F /* GFButton.swift */,
-				B925CB7324D2B94500CC0C1B /* GFAlertVC.swift */,
-				B9A8069324D807420041BEB3 /* GFAvatarImageView.swift */,
-				B91DB81624DE898800F0DB72 /* GFEmptyStateView.swift */,
 			);
-			path = Views;
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		B97EEB6C24D3F41200634F88 /* Support */ = {
@@ -170,7 +218,7 @@
 				B9D2998624C06CDF00F30B67 /* Info.plist */,
 				B97EEB6D24D3F41A00634F88 /* Extensions */,
 				B97EEB6C24D3F41200634F88 /* Support */,
-				B97EEB6B24D3F3DA00634F88 /* Views */,
+				B97EEB6B24D3F3DA00634F88 /* Custom Views */,
 				B97EEB6A24D3F3C400634F88 /* Screens */,
 			);
 			path = GitHubFinder;
