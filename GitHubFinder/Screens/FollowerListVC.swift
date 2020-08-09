@@ -10,6 +10,7 @@ class FollowerListVC: UIViewController {
     var username: String!
     var followers = [Follower]()
     var page = 1
+    var hasMoreFollowers = true
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -37,6 +38,7 @@ class FollowerListVC: UIViewController {
         view.addSubview(collectionView)
         collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
+        collectionView.delegate = self
     }
     
     private func getFollowers(username: String, page: Int){
@@ -44,11 +46,22 @@ class FollowerListVC: UIViewController {
         NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] (result) in
             guard let self = self else{ return }
             self.hideLoadingView()
+            
             switch(result){
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Error", message: error.rawValue, buttonTitle: "Ok")
             case .success(let followers):
-                self.followers = followers
+                if followers.count < 100 { self.hasMoreFollowers = false }
+                self.followers.append(contentsOf: followers)
+                
+                if self.followers.isEmpty {
+                     DispatchQueue.main.async {
+                        self.showEmptyStateView(with: "No Followers", in: self.view)
+                    
+                    }
+                    
+                }
+                
                 self.updateData()
             }
         }
@@ -76,6 +89,7 @@ extension FollowerListVC: UICollectionViewDelegate{
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.frame.size.height {
+            guard hasMoreFollowers else { return }
             page += 1
             getFollowers(username: username, page: page)
         }
