@@ -9,6 +9,7 @@ class FollowerListVC: UIViewController {
     
     var username: String!
     var followers = [Follower]()
+    var filteredFollowers = [Follower]()
     var page = 1
     var hasMoreFollowers = true
     
@@ -21,6 +22,7 @@ class FollowerListVC: UIViewController {
         configureCollectionView()
         getFollowers(username: username, page: page)
         configureDataSource()
+        configureSearchController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +71,7 @@ class FollowerListVC: UIViewController {
                     
                 }
                 
-                self.updateData()
+                self.updateData(followers: self.followers)
             }
         }
     }
@@ -82,11 +84,11 @@ class FollowerListVC: UIViewController {
         })
     }
     
-    private func updateData(){
+    private func updateData(followers: [Follower]){
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
-        dataSource.apply(snapshot)
+        DispatchQueue.main.async { self.dataSource.apply(snapshot) }
     }
 
 }
@@ -106,6 +108,9 @@ extension FollowerListVC: UICollectionViewDelegate{
 
 extension FollowerListVC: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
-        
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
+        updateData(followers: filteredFollowers)
     }
+    
 }
