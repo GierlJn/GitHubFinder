@@ -38,6 +38,7 @@ class FollowerListVC: UIViewController {
     private func configureSearchController(){
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Enter username"
         navigationItem.searchController = searchController
     }
@@ -106,11 +107,14 @@ extension FollowerListVC: UICollectionViewDelegate{
     
 }
 
-extension FollowerListVC: UISearchResultsUpdating{
+extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate{
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateData(followers: filteredFollowers)
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        updateData(followers: self.followers)
+    }
 }
