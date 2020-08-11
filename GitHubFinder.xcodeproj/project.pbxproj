@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B90D55A424D95855002C085F /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D55A324D95855002C085F /* UIHelper.swift */; };
+		B90EF49024E2954100247970 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EF48F24E2954100247970 /* UserInfoVC.swift */; };
 		B91DB81724DE898800F0DB72 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DB81624DE898800F0DB72 /* GFEmptyStateView.swift */; };
 		B91DE7B124C6DF7C00B6CEB5 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DE7B024C6DF7C00B6CEB5 /* FollowerListVC.swift */; };
 		B91F3FDD24C0804200F6655B /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F3FDC24C0804200F6655B /* SearchVC.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		B90D55A324D95855002C085F /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		B90EF48F24E2954100247970 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		B91DB81624DE898800F0DB72 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
 		B91DE7B024C6DF7C00B6CEB5 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		B91F3FDC24C0804200F6655B /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				B91DE7B024C6DF7C00B6CEB5 /* FollowerListVC.swift */,
 				B91F3FDE24C0805200F6655B /* FavouritesVC.swift */,
 				B91F3FDC24C0804200F6655B /* SearchVC.swift */,
+				B90EF48F24E2954100247970 /* UserInfoVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				B925CB6E24D2B65600CC0C1B /* GFTitleLabel.swift in Sources */,
 				B91DE7B124C6DF7C00B6CEB5 /* FollowerListVC.swift in Sources */,
 				B9380B0424C2FBE70010D26F /* GFTextField.swift in Sources */,
+				B90EF49024E2954100247970 /* UserInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
