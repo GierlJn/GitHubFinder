@@ -19,14 +19,12 @@ class UserInfoVC: UIViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = doneButton
         
-        print(username)
-        
         NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
             guard let self = self else { return }
             
             switch result{
             case .failure(let error):
-                self.presentGFAlertOnMainThread(title: "Error", message: "User Info could not be loaded", buttonTitle: "Ok")
+                self.presentGFAlertOnMainThread(title: "Something is wrong", message: error.rawValue, buttonTitle: "Ok")
             case .success(let user):
                 print(user)
             }
