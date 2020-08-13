@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B9027BED24E51CD600703A0B /* GFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9027BEC24E51CD600703A0B /* GFSecondaryTitleLabel.swift */; };
+		B9027BEF24E51D6E00703A0B /* GFUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9027BEE24E51D6E00703A0B /* GFUserInfoHeaderVC.swift */; };
 		B90D55A424D95855002C085F /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D55A324D95855002C085F /* UIHelper.swift */; };
 		B90EF49024E2954100247970 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EF48F24E2954100247970 /* UserInfoVC.swift */; };
 		B91DB81724DE898800F0DB72 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DB81624DE898800F0DB72 /* GFEmptyStateView.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		B9027BEC24E51CD600703A0B /* GFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		B9027BEE24E51D6E00703A0B /* GFUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFUserInfoHeaderVC.swift; sourceTree = "<group>"; };
 		B90D55A324D95855002C085F /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		B90EF48F24E2954100247970 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		B91DB81624DE898800F0DB72 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				B925CB7324D2B94500CC0C1B /* GFAlertVC.swift */,
+				B9027BEE24E51D6E00703A0B /* GFUserInfoHeaderVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				B91F3FDD24C0804200F6655B /* SearchVC.swift in Sources */,
 				B91F3FDF24C0805200F6655B /* FavouritesVC.swift in Sources */,
 				B925CB7624D2D49F00CC0C1B /* UIViewController+Ext.swift in Sources */,
+				B9027BEF24E51D6E00703A0B /* GFUserInfoHeaderVC.swift in Sources */,
 				B9380B0224C2F8EB0010D26F /* GFButton.swift in Sources */,
 				B925CB7024D2B76B00CC0C1B /* CGBodyLabel.swift in Sources */,
 				B90D55A424D95855002C085F /* UIHelper.swift in Sources */,
