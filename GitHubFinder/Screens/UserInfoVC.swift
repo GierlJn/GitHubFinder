@@ -10,6 +10,8 @@ import UIKit
 
 class UserInfoVC: UIViewController {
 
+    let headerView = UIView()
+    
     var username: String!
     
     override func viewDidLoad() {
@@ -19,6 +21,7 @@ class UserInfoVC: UIViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = doneButton
         
+        layoutUI()
         NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
             guard let self = self else { return }
             
@@ -30,6 +33,23 @@ class UserInfoVC: UIViewController {
             }
         }
     }
+    
+    private func layoutUI(){
+        view.addSubview(headerView)
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.backgroundColor = .systemPink
+        NSLayoutConstraint.activate([
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerView.heightAnchor.constraint(equalToConstant: 180)
+        ])
+    }
+    
+    private func add(childVC: UIViewController, to contentView: UIView){
+        addChild(childVC)
+    }
+    
     
     @objc func dismissVC(){
         dismiss(animated: true)
