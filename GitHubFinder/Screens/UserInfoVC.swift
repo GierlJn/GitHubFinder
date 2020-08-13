@@ -29,7 +29,9 @@ class UserInfoVC: UIViewController {
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something is wrong", message: error.rawValue, buttonTitle: "Ok")
             case .success(let user):
-                print(user)
+                DispatchQueue.main.async {
+                    self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
+                }
             }
         }
     }
@@ -37,7 +39,7 @@ class UserInfoVC: UIViewController {
     private func layoutUI(){
         view.addSubview(headerView)
         headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.backgroundColor = .systemPink
+        
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -46,8 +48,11 @@ class UserInfoVC: UIViewController {
         ])
     }
     
-    private func add(childVC: UIViewController, to contentView: UIView){
+    private func add(childVC: UIViewController, to containerView: UIView){
         addChild(childVC)
+        containerView.addSubview(childVC.view)
+        childVC.view.frame = containerView.bounds
+        childVC.didMove(toParent: self)
     }
     
     
