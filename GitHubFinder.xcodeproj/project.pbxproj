@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9027BED24E51CD600703A0B /* GFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9027BEC24E51CD600703A0B /* GFSecondaryTitleLabel.swift */; };
 		B90D55A424D95855002C085F /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D55A324D95855002C085F /* UIHelper.swift */; };
 		B90EF49024E2954100247970 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EF48F24E2954100247970 /* UserInfoVC.swift */; };
 		B91DB81724DE898800F0DB72 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DB81624DE898800F0DB72 /* GFEmptyStateView.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9027BEC24E51CD600703A0B /* GFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		B90D55A324D95855002C085F /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		B90EF48F24E2954100247970 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		B91DB81624DE898800F0DB72 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				B925CB6D24D2B65600CC0C1B /* GFTitleLabel.swift */,
 				B925CB6F24D2B76B00CC0C1B /* CGBodyLabel.swift */,
+				B9027BEC24E51CD600703A0B /* GFSecondaryTitleLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				B925CB7024D2B76B00CC0C1B /* CGBodyLabel.swift in Sources */,
 				B90D55A424D95855002C085F /* UIHelper.swift in Sources */,
 				B925CB7424D2B94500CC0C1B /* GFAlertVC.swift in Sources */,
+				B9027BED24E51CD600703A0B /* GFSecondaryTitleLabel.swift in Sources */,
 				B9D2997924C06CDD00F30B67 /* AppDelegate.swift in Sources */,
 				B9A8069724D808000041BEB3 /* FollowerCell.swift in Sources */,
 				B97EEB7424D3FB2E00634F88 /* Follower.swift in Sources */,
