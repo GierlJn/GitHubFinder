@@ -7,6 +7,8 @@ class UserInfoVC: UIViewController {
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
     
+    
+    
     var username: String!
     
     override func viewDidLoad() {
@@ -32,6 +34,8 @@ class UserInfoVC: UIViewController {
             case .success(let user):
                 DispatchQueue.main.async {
                     self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
+                    self.add(childVC: GFRepoItemVC(user: user), to: self.itemViewOne)
+                    self.add(childVC: GFFollowerItemVC(user: user), to: self.itemViewTwo)
                 }
             }
         }
@@ -41,9 +45,7 @@ class UserInfoVC: UIViewController {
         view.addSubview(headerView)
         view.addSubview(itemViewOne)
         view.addSubview(itemViewTwo)
-        
-        itemViewOne.backgroundColor = .systemPink
-        itemViewTwo.backgroundColor = .systemBlue
+
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
         itemViewOne.translatesAutoresizingMaskIntoConstraints = false

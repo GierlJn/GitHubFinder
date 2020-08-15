@@ -86,11 +86,9 @@
 		B943E8DE24E04BEE00F049F0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B9E9F4AE24E7EFA800E87D3B /* ItemInfoVC */,
 				B925CB7324D2B94500CC0C1B /* GFAlertVC.swift */,
 				B9027BEE24E51D6E00703A0B /* GFUserInfoHeaderVC.swift */,
-				B9E9F4A824E7E86400E87D3B /* GFItemInfoVC.swift */,
-				B9E9F4AA24E7EEE700E87D3B /* GFRepoItemVC.swift */,
-				B9E9F4AC24E7EF5300E87D3B /* GFFollowerItemVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -246,6 +244,16 @@
 				B97EEB6A24D3F3C400634F88 /* Screens */,
 			);
 			path = GitHubFinder;
+			sourceTree = "<group>";
+		};
+		B9E9F4AE24E7EFA800E87D3B /* ItemInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				B9E9F4A824E7E86400E87D3B /* GFItemInfoVC.swift */,
+				B9E9F4AA24E7EEE700E87D3B /* GFRepoItemVC.swift */,
+				B9E9F4AC24E7EF5300E87D3B /* GFFollowerItemVC.swift */,
+			);
+			path = ItemInfoVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
