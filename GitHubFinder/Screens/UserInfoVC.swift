@@ -1,15 +1,18 @@
 
 import UIKit
 
+protocol UserInfoVCDelegate: class{
+    func didTapGitHubProfile()
+    func didTapGetFollowers()
+}
+
 class UserInfoVC: UIViewController {
 
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
     let dateLabel = GFBodyLabel(textAlignment: .center)
-    
-    
-    
+ 
     var username: String!
     
     override func viewDidLoad() {
@@ -33,14 +36,21 @@ class UserInfoVC: UIViewController {
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something is wrong", message: error.rawValue, buttonTitle: "Ok")
             case .success(let user):
-                DispatchQueue.main.async {
-                    self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
-                    self.add(childVC: GFRepoItemVC(user: user), to: self.itemViewOne)
-                    self.add(childVC: GFFollowerItemVC(user: user), to: self.itemViewTwo)
-                    self.dateLabel.text = "On GitHub Since \(user.createdAt.convertToMonthYearDisplayFormat())"
-                }
+                DispatchQueue.main.async { self.configureUIElements(with: user) }
             }
         }
+    }
+    
+    private func configureUIElements(with user: User){
+        let repoItemVc = GFRepoItemVC(user: user)
+        repoItemVc.delegate = self
+        let folllowerItemVc = GFFollowerItemVC(user: user)
+        folllowerItemVc.delegate = self
+        
+        self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
+        self.add(childVC: repoItemVc, to: self.itemViewOne)
+        self.add(childVC: folllowerItemVc, to: self.itemViewTwo)
+        self.dateLabel.text = "On GitHub Since \(user.createdAt.convertToMonthYearDisplayFormat())"
     }
     
     private func layoutUI(){
@@ -93,4 +103,15 @@ class UserInfoVC: UIViewController {
         dismiss(animated: true)
     }
 
+}
+
+extension UserInfoVC: UserInfoVCDelegate{
+    
+    func didTapGitHubProfile() {
+        print("test")
+    }
+    
+    func didTapGetFollowers() {
+        //
+    }
 }
