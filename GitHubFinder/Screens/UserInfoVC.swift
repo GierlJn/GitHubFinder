@@ -110,7 +110,7 @@ extension UserInfoVC: UserInfoVCDelegate{
     
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else{
-            presentGFAlertOnMainThread(title: "Invalid Url", message: "invalid url", buttonTitle: "Ok")
+            presentGFAlertOnMainThread(title: "Invalid Url", message: "Invalid url", buttonTitle: "Ok")
             return
         }
         
@@ -118,6 +118,13 @@ extension UserInfoVC: UserInfoVCDelegate{
     }
     
     func didTapGetFollowers(for user: User) {
-        //
+        
+        guard user.followers != 0 else {
+            presentGFAlertOnMainThread(title: "No followers", message: "This user has no followers", buttonTitle: "Ok")
+            return
+        }
+        
+        delegate.didRequestFollowers(for: user.login)
+        dismissVC()
     }
 }
