@@ -1,10 +1,4 @@
-//
-//  GFFollowerItemVC.swift
-//  GitHubFinder
-//
-//  Created by Julian Gierl on 15.08.20.
-//  Copyright © 2020 Julian Gierl. All rights reserved.
-//
+
 
 class GFFollowerItemVC: GFItemInfoVC {
 
@@ -18,6 +12,10 @@ class GFFollowerItemVC: GFItemInfoVC {
         itemInfoViewOne.set(itemInfoType: .followers, withCount: user.followers)
         itemInfoViewTwo.set(itemInfoType: .following, withCount: user.following)
         actionButton.set(backgroundColor: .systemGreen, title: "Get Followers")
+    }
+    
+    override func actionButtonTapped() {
+        delegate.didTapGetFollowers(for: user)
     }
 
 }
