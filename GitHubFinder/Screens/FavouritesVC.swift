@@ -4,16 +4,18 @@ import UIKit
 
 class FavouritesVC: UIViewController {
 
+    let tableView = UITableView()
+    var favorites = [Follower]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
-        getFavorites()
-
+        configureTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = false
+        getFavorites()
     }
     
     func configureViewController(){
@@ -21,16 +23,52 @@ class FavouritesVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
     }
+    
+    func configureTableView() {
+        view.addSubview(tableView)
+        tableView.frame = view.bounds
+        tableView.rowHeight = 80
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.reuseID)
+    }
 
     func getFavorites() {
-        PersistenceManager.retrieveFavorites { result in
+        PersistenceManager.retrieveFavorites { [weak self] result in
+            guard let self = self else { return }
+            
             switch result {
-            case .success(let follower):
-                print(follower)
+            case .success(let favorites):
+                if favorites.isEmpty {
+                    self.showEmptyStateView(with: "No Favorites", in: self.view)
+                } else {
+                    self.favorites = favorites
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        self.view.bringSubviewToFront(self.tableView)
+                    }
+                }
+                
+                
             case .failure(let error):
-                print(error.rawValue)
+                self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
 
+}
+
+extension FavouritesVC: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return favorites.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCell.reuseID) as! FavoriteCell
+        cell.set(favorite: favorites[indexPath.row])
+        return cell
+    }
+    
+    
 }
