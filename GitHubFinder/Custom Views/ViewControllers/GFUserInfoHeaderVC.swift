@@ -37,7 +37,7 @@ class GFUserInfoHeaderVC: UIViewController {
         bioLabel.text = user.bio ?? ""
         bioLabel.numberOfLines = 3
         
-        locationImageView.image = UIImage(systemName: SFSymbols.location)
+        locationImageView.image = SFSymbols.location
         locationLabel.tintColor = .secondaryLabel
     }
     
