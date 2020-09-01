@@ -55,11 +55,7 @@ class UserInfoVC: UIViewController {
     }
     
     private func layoutUI(){
-        view.addSubview(headerView)
-        view.addSubview(itemViewOne)
-        view.addSubview(itemViewTwo)
-        view.addSubview(dateLabel)
-
+        view.addSubviews(headerView, itemViewOne, itemViewTwo, dateLabel)
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
         itemViewOne.translatesAutoresizingMaskIntoConstraints = false

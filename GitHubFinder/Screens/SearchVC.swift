@@ -15,6 +15,7 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         createDismissKeyboardTapGesture()
+        view.addSubviews(logoImageView, userInputTextfield, callToActionButton)
         configureImageView()
         configureInputTextField()
         configureCallToActionButton()
@@ -44,7 +45,6 @@ class SearchVC: UIViewController {
     }
     
     func configureImageView(){
-        view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.image = Images.ghLogo
         
@@ -62,7 +62,6 @@ class SearchVC: UIViewController {
     }
     
     func configureInputTextField(){
-        view.addSubview(userInputTextfield)
         userInputTextfield.delegate = self
         NSLayoutConstraint.activate([
             userInputTextfield.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
@@ -73,7 +72,6 @@ class SearchVC: UIViewController {
     }
     
     func configureCallToActionButton(){
-        view.addSubview(callToActionButton)
         callToActionButton.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
