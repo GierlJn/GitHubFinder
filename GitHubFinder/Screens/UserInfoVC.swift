@@ -1,10 +1,7 @@
 
 import UIKit
 
-protocol UserInfoVCDelegate: class{
-    func didTapGitHubProfile(for user: User)
-    func didTapGetFollowers(for user: User)
-}
+
 
 class UserInfoVC: UIViewController {
 
@@ -102,7 +99,7 @@ class UserInfoVC: UIViewController {
 
 }
 
-extension UserInfoVC: UserInfoVCDelegate{
+extension UserInfoVC: ItemInfoVCDelegate{
     
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else{

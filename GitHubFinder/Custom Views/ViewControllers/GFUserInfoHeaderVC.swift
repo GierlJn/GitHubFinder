@@ -41,6 +41,7 @@ class GFUserInfoHeaderVC: UIViewController {
         locationLabel.tintColor = .secondaryLabel
     }
     
+    
     private func layoutUI(){
         let padding: CGFloat = 20
         let textImagePadding: CGFloat = 12
