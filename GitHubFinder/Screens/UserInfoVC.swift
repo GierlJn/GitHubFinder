@@ -5,6 +5,9 @@ import UIKit
 
 class UserInfoVC: UIViewController {
 
+    let scrollView = UIScrollView()
+    let contentView = UIView()
+    
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
@@ -18,6 +21,7 @@ class UserInfoVC: UIViewController {
         configureVC()
         layoutUI()
         getUserInfo()
+        configureScrollView()
     }
     
     private func configureVC() {
@@ -39,6 +43,18 @@ class UserInfoVC: UIViewController {
         }
     }
     
+    private func configureScrollView(){
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        scrollView.pinToEdges(of: view)
+        contentView.pinToEdges(of: scrollView)
+        
+        NSLayoutConstraint.activate([
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 600)
+        ])
+    }
+    
     private func configureUIElements(with user: User){
         let repoItemVc = GFRepoItemVC(user: user)
         repoItemVc.delegate = self
@@ -52,7 +68,7 @@ class UserInfoVC: UIViewController {
     }
     
     private func layoutUI(){
-        view.addSubviews(headerView, itemViewOne, itemViewTwo, dateLabel)
+        contentView.addSubviews(headerView, itemViewOne, itemViewTwo, dateLabel)
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
         itemViewOne.translatesAutoresizingMaskIntoConstraints = false
@@ -63,24 +79,24 @@ class UserInfoVC: UIViewController {
         let itemHeight: CGFloat = 140
         
         NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+            headerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 180),
             
             itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
-            itemViewOne.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            itemViewOne.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            itemViewOne.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            itemViewOne.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
             itemViewOne.heightAnchor.constraint(equalToConstant: itemHeight),
             
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
-            itemViewTwo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            itemViewTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            itemViewTwo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            itemViewTwo.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
             itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
             
             dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
-            dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
             dateLabel.heightAnchor.constraint(equalToConstant: 18),
         ])
     }
