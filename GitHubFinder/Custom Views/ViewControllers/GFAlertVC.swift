@@ -22,19 +22,23 @@ class GFAlertVC: UIViewController {
         self.buttonTitle = buttonTitle
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
         view.addSubviews(containerView, titleLabel, actionButton, messageLabel)
+        
         configureContainerView()
         configureTitleLabel()
         configureActionButton()
         configureMessageLabel()
     }
+    
     
     func configureContainerView(){
         NSLayoutConstraint.activate([
@@ -43,8 +47,8 @@ class GFAlertVC: UIViewController {
             containerView.widthAnchor.constraint(equalToConstant: 280),
             containerView.heightAnchor.constraint(equalToConstant: 220)
         ])
-        
     }
+    
     
     func configureTitleLabel(){
         titleLabel.text = alertTitle ?? "Something went wrong"
@@ -57,6 +61,7 @@ class GFAlertVC: UIViewController {
         ])
     }
     
+    
     func configureActionButton(){
         actionButton.setTitle(buttonTitle ?? "Ok", for: .normal)
         actionButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
@@ -68,6 +73,7 @@ class GFAlertVC: UIViewController {
             actionButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
+    
     
     func configureMessageLabel(){
         messageLabel.text = message ?? "There is nothing here"
@@ -85,6 +91,4 @@ class GFAlertVC: UIViewController {
     @objc func dismissVC(){
         dismiss(animated: true)
     }
-    
-    
 }
