@@ -1,10 +1,3 @@
-//
-//  GFTextField.swift
-//  GitHubFinder
-//
-//  Created by Julian Gierl on 18.07.20.
-//  Copyright © 2020 Julian Gierl. All rights reserved.
-//
 
 import UIKit
 
@@ -35,7 +28,6 @@ class GFTextField: UITextField {
         
         backgroundColor = .tertiarySystemBackground
         autocorrectionType = .no
-        
         returnKeyType = .go
         clearButtonMode = .whileEditing
         placeholder = "Enter a username"
